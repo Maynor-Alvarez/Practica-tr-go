@@ -158,7 +158,7 @@ func getItunes(w http.ResponseWriter, name string, artist string, album string) 
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
 		if err != nil {
-
+			log.Printf("Error al leer body: %v", err)
 		}
 	}(response.Body)
 
@@ -193,7 +193,7 @@ func getChartLyrics(w http.ResponseWriter, name string, artist string) SearchLyr
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
 		if err != nil {
-
+			log.Printf("Error al leer body: %v", err)
 		}
 	}(response.Body)
 
@@ -233,7 +233,7 @@ func saveCache(name string, artist string, album string, db *sql.DB) []Song {
 		defer func(rows *sql.Rows) {
 			err := rows.Close()
 			if err != nil {
-
+				log.Printf("Error al leer body: %v", err)
 			}
 		}(rows)
 
