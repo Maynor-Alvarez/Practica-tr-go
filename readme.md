@@ -43,3 +43,17 @@ La base de datos es MySql y utiliza las siguentes credenciales
 
 Se pueden cambiar estas según sea necesario si se desea, con el comando mostrado en el apartado de "Instalación Local"
 
+se debe crear un schema con el nombre "itunes" y crear la siguente tabla:
+
+`CREATE TABLE songs (
+id INT AUTO_INCREMENT PRIMARY KEY,
+track_id int not null,
+name VARCHAR(255) NOT NULL,
+artist VARCHAR(255) NOT NULL,
+duration INT,
+album VARCHAR(255),
+artwork VARCHAR(255),
+price DECIMAL(10, 2),
+origin VARCHAR(255) NOT NULL
+);`
+
